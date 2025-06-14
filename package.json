@@ -1,0 +1,15 @@
+{
+  "name": "norseflow-assets",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "mkdir -p public/dist && tailwindcss -i ./src/css/main.css -o ./public/dist/main.css --minify"
+  },
+  "dependencies": {
+    "alpinejs": "^3.10.5"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.6",
+    "postcss": "^8.4.12",
+    "autoprefixer": "^10.4.7"
+  }
+}
