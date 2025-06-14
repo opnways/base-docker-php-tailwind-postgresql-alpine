@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
       target: fpm
     volumes:
+      - ./app:/var/www/html/app
+      - ./public:/var/www/html/public
       - vendor:/var/www/html/vendor
       - dist:/var/www/html/public/dist
     env_file:
