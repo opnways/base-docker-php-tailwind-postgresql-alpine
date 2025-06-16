@@ -7,7 +7,7 @@
     <link href="/dist/main.css" rel="stylesheet">
     <script src="/dist/alpine.min.js" defer></script>
 </head>
-<body class="bg-gray-100 text-gray-800" x-data>
+<body class="bg-primary text-white" x-data>
     <div class="container mx-auto py-8">
         <?= $content ?>
     </div>
