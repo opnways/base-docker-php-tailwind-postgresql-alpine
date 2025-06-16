@@ -6,6 +6,24 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+    public function loginForm()
+    {
+        return $this->response->renderView('auth/login');
+    }
+
+    public function login()
+    {
+        $email = $this->request->post('email');
+        $password = $this->request->post('password');
+        $userModel = new User();
+        $user = $userModel->findByEmail($email);
+        if (!$user || !password_verify($password, $user['password'])) {
+            return $this->response->renderView('auth/login', ['error' => 'Credenciales inválidas']);
+        }
+        $_SESSION['user'] = $user['id'];
+        $this->response->redirect('/dashboard');
+    }
+
     public function registerForm()
     {
         return $this->response->renderView('auth/register');
