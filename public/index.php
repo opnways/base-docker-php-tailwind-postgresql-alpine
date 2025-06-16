@@ -5,9 +5,11 @@ use App\Core\Router;
 use App\Core\Request;
 use App\Core\Response;
 use App\Controllers\HomeController;
+use App\Controllers\AuthController;
 
 $router = new Router(new Request(), new Response());
 
-$router->get('/', [HomeController::class, 'index']);
+$router->get('/', [AuthController::class, 'registerForm']);
+$router->post('/', [AuthController::class, 'register']);
 
 echo $router->resolve();

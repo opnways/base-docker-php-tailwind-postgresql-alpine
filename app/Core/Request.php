@@ -29,4 +29,13 @@ class Request {
         }
         return $body;
     }
+public function post(string $key): ?string {
+        $body = $this->getBody();
+        return $body[$key] ?? null;
+    }
+
+    public function get(string $key): ?string {
+        $body = $this->getBody();
+        return $body[$key] ?? null;
+    }
 }
